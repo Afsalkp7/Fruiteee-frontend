@@ -23,7 +23,6 @@ export default function NavBar() {
             </div>
             <button className='navbar-button'>Sign In</button>
         </div>
-
     </div>
   )
 }
