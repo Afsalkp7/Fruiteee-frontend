@@ -1,0 +1,8 @@
+.slide {
+    height: 34vw;
+    margin: 5px auto;
+    background: url('../assets/slide1.jpg');
+    background-size: contain;
+    /* background-repeat: repeat-x; */
+    position: relative;
+}

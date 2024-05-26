@@ -1,8 +1,13 @@
 import React from 'react'
+import SlideBanner from './SlideBanner'
+import CategorySection from './CategorySection'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+        <SlideBanner />
+        <CategorySection />
+    </>
   )
 }
 
