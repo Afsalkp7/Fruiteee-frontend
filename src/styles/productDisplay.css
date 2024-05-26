@@ -1,0 +1,16 @@
+.product-display {
+    padding: 50px;
+}
+
+.product-display h1 {
+    color: #262626;
+    font-weight: 500;
+}
+
+.product-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
+}

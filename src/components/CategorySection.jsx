@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../styles/categorySection.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import Image from "./Image";
 import { categories as categoryData } from "../constants/catergory";
-function CategorySection() {
+function CategorySection({exploreCategory,setExploreCategory}) {
   const [categories, setCategories] = useState([]);
+  const skeltonArray = [1,2,3,4,5,6,7,8,9,10]
   useEffect(() => {
     const timer = setTimeout(() => {
       setCategories(categoryData);
@@ -22,29 +22,15 @@ function CategorySection() {
             {
             categories.length==0?
             <div className="explore-menu-list-item-skelton">
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
-                <Skeleton circle width='7.5vw' height='100px'/>
+              {skeltonArray.map((num)=>(
+                <Skeleton key={num} circle width='7.5vw' height='100px'/>
+              ))}
             </div>
             
             :
             categories.map((item)=>(
-                <div key={item.id} className="explore-menu-list-item">
-                    <img src={item.categoryImage} />
+                <div onClick={()=>setExploreCategory(prev=>prev === item.categoryName ? 'All' : item.categoryName)} key={item.id} className="explore-menu-list-item">
+                    <img className={exploreCategory === item.categoryName ? 'active' : ''} src={item.categoryImage} />
                     <p>{item.categoryName}</p>
                 </div>
             ))}

@@ -59,3 +59,7 @@
 .explore-menu-list-item-skelton::-webkit-scrollbar{
     display: none;
 }
+.explore-menu-list-item .active {
+    border: 2px solid orange;
+    padding: 2px;
+}
